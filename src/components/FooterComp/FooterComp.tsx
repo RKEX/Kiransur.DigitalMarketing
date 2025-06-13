@@ -13,7 +13,7 @@ const FooterComp = () => {
             <span className="font-semibold">Email :</span> info@kiransur.com
           </p>
           <p className="text-base md:text-lg">
-            <span className="font-semibold">Phone :</span>+91 9082053525
+            <span className="font-semibold">Phone :</span> +91 9082053525
           </p>
         </div>
 
