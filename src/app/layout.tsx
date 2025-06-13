@@ -1,9 +1,8 @@
-import { ReactNode } from "react";
-import "./globals.css";
+import FooterComp from "@/components/FooterComp/FooterComp";
 import DesktopNavs from "@/components/Navs/DesktopNavs";
 import MobileNavs from "@/components/Navs/MobileNavs";
-import FooterComp from "@/components/FooterComp/FooterComp";
-import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { ReactNode } from "react";
+import "./globals.css";
 
 type RootLayoutPropsType = Readonly<{
   children: ReactNode;
