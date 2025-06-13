@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { NumberTicker } from "../magicui/number-ticker";
 
@@ -14,13 +16,16 @@ const stats = [
 
 const FounderComp = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-[#eef2f5] to-[#c3cfe2] dark:from-[#0f0f0f] dark:to-[#1a1a1a] py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        {/* Founder Image & Quote */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="w-[260px] h-[360px] relative rounded-2xl overflow-hidden shadow-md border border-gray-300 dark:border-neutral-700">
+    <section className="w-full px-4 py-10 bg-gradient-to-br from-[#eef2f5] to-[#c3cfe2] dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
+      <div className="font-bold text-3xl text-black text-center mb-8">
+        Our Founder
+      </div>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start justify-between">
+        {/* Left Section: Founder Info */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5">
+          <div className="w-[220px] h-[300px] sm:w-[260px] sm:h-[360px] relative rounded-2xl overflow-hidden shadow-md border border-gray-300 dark:border-neutral-700">
             <Image
-              src="/founder.jpg" // Make sure you use your actual image path
+              src="/founder.jpg"
               alt="Founder"
               layout="fill"
               objectFit="cover"
@@ -29,27 +34,32 @@ const FounderComp = () => {
               className="hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <p className="mt-6 italic text-sm text-gray-700 dark:text-gray-400 max-w-xs leading-relaxed">
+          <h1 className="text-lg font-bold text-black dark:text-white">
+            Our Founder
+          </h1>
+          <p className="italic text-sm text-gray-700 dark:text-gray-400 max-w-xs leading-relaxed">
             "Great things in business are never done by one person. They're done
             by a team."
           </p>
-          <p className="text-sm mt-2 font-semibold text-gray-800 dark:text-white">
+          <p className="text-sm font-semibold text-gray-800 dark:text-white">
             — Kiran Sur, Founder
           </p>
+
+          <div className="mt-4 space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white">
+              Founder’s Impact
+            </h2>
+            <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 max-w-md">
+              With vision and dedication, our founder built a company that
+              values people, results, and creativity. The impact is reflected in
+              the numbers—and the trust of our clients.
+            </p>
+          </div>
         </div>
 
-        {/* Text & Stats */}
-        <div>
-          <h2 className="text-4xl font-extrabold text-neutral-900 dark:text-white mb-4">
-            Founder’s Impact
-          </h2>
-          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-8 max-w-lg">
-            With vision and dedication, our founder built a company that values
-            people, results, and creativity. The impact is reflected in the
-            numbers—and the trust of our clients.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Right Section: Statistics */}
+        <div className="flex-1 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
             {stats.map((item, i) => (
               <div
                 key={i}
@@ -57,9 +67,9 @@ const FounderComp = () => {
               >
                 <NumberTicker
                   value={item.value}
-                  className="text-2xl font-bold text-black dark:text-white"
+                  className="text-xl sm:text-2xl font-bold text-black dark:text-white"
                 />
-                <p className="mt-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <p className="mt-2 text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">
                   {item.label}
                 </p>
               </div>
